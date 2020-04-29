@@ -6,10 +6,9 @@ import screens.HomeScreen;
 
 public class parkCarAtCurrentLocationTest extends BaseTest {
     @Test
-    public void shouldParkCarAtCurrentLocation(){
-        HomeScreen homeScreen = new HomeScreen(driver);
-        homeScreen.park()
-        .assertParked();
-
+    public void shouldParkCarAtCurrentLocation() {
+        new HomeScreen(driver)
+                .park()
+                .assertParked();
     }
 }

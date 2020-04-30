@@ -11,4 +11,5 @@ public class parkCarAtCurrentLocationTest extends BaseTest {
                 .park()
                 .assertParked();
     }
+
 }

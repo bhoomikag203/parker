@@ -1,0 +1,5 @@
+package screens;
+
+public enum Menu {
+    NOTIFICATIONS, PARKING_HISTORY, HELP_TUTORIAL, FEEDBACK, TROUBLESHOOTING
+}

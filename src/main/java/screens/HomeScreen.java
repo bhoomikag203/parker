@@ -4,6 +4,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.html5.Location;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
@@ -53,6 +54,13 @@ public class HomeScreen extends BaseScreen {
         click(nextButton);
         click(nextButton);
         click(nextButton);
+        return this;
+    }
+
+    public HomeScreen setLocation(Location location){
+        System.out.println("before "+ driver.location());
+        driver.setLocation(location);
+        System.out.println("after "+ driver.location());
         return this;
     }
 

@@ -1,4 +1,5 @@
 import org.testng.annotations.Test;
+import screens.HomeScreen;
 import screens.Menu;
 import screens.MenuScreen;
 import screens.NotificationsScreen;
@@ -6,6 +7,7 @@ import screens.NotificationsScreen;
 public class disableNotificationsAndParkTheCarTest extends BaseTest{
     @Test
     public void shouldDisableNotificationAndParKCar(){
+        HomeScreen homeScreen = new HomeScreen(driver).init();
         new NotificationsScreen(driver)
                 .navigateToNotification()
                 .disableNotifications()

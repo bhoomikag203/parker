@@ -39,9 +39,21 @@ public class HomeScreen extends BaseScreen {
     @AndroidFindBy(id = "com.streetline.parker:id/maps_router_time")
     MobileElement estimatedTimeText;
 
+    @AndroidFindBy(id = "com.streetline.parker:id/maps_onboarding_pager_next")
+    MobileElement nextButton;
+
     public HomeScreen(AndroidDriver driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    }
+
+    public HomeScreen init(){
+        driver.findElementByAndroidUIAutomator("text(\"ENABLE LOCATION\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"ALLOW ONLY WHILE USING THE APP\")").click();
+        click(nextButton);
+        click(nextButton);
+        click(nextButton);
+        return this;
     }
 
     public HomeScreen park() {

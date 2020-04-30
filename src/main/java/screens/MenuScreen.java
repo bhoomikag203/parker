@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class MenuScreen {
+public class MenuScreen extends BaseScreen {
 
     @AndroidFindBy(className = "android.widget.ImageButton")
     MobileElement hamburgerIcon;
@@ -19,6 +19,7 @@ public class MenuScreen {
     List<MobileElement> menuItems;
 
     public MenuScreen(AndroidDriver driver) {
+        super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 

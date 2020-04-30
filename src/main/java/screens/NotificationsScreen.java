@@ -30,4 +30,6 @@ public class NotificationsScreen extends BaseScreen {
         driver.navigate().back();
         return new HomeScreen(driver);
     }
+
+
 }

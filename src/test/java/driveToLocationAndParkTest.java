@@ -5,6 +5,7 @@ public class driveToLocationAndParkTest extends BaseTest {
     @Test
     public void shouldDriveToLocationAndPark() {
         new HomeScreen(driver)
+                .init()
                 .driveToLocation("Bengaluru");
     }
 }

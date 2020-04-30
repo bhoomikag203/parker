@@ -19,6 +19,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         driver = driverInitialize.initialize();
+
     }
 
     @Test

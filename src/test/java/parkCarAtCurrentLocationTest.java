@@ -8,6 +8,7 @@ public class parkCarAtCurrentLocationTest extends BaseTest {
     @Test
     public void shouldParkCarAtCurrentLocation() {
         new HomeScreen(driver)
+                .init()
                 .park()
                 .assertParked();
     }

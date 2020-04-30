@@ -10,6 +10,7 @@ import org.openqa.selenium.html5.Location;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
 public class HomeScreen extends BaseScreen {
@@ -44,6 +45,9 @@ public class HomeScreen extends BaseScreen {
 
     @AndroidFindBy(id = "com.streetline.parker:id/maps_onboarding_pager_next")
     MobileElement nextButton;
+
+    @AndroidFindBy(id = "com.streetline.parker:id/maps_parked_cc_layout")
+    MobileElement paymentButton;
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
@@ -105,7 +109,13 @@ public class HomeScreen extends BaseScreen {
         return this;
     }
 
+    public HomeScreen sendAppToBackground(){
+        driver.runAppInBackground(Duration.ofSeconds(10));
+        return this;
+    }
+
     public HomeScreen unPark() {
+        waitForElementToBeVisible(dismissParkLocationButton);
         if (isParked == true) {
             click(dismissParkLocationButton);
             return this;
@@ -113,6 +123,10 @@ public class HomeScreen extends BaseScreen {
             System.out.println("Car not parked!!!");
         }
         return this;
+    }
+
+    public void assertUnParked(){
+        Assert.assertTrue(parkVehicleButton.isDisplayed());
     }
 
     public void assertParkedInLandscapeMode() {

@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class MenuScreen extends BaseScreen {
+public class MenuScreen {
 
     @AndroidFindBy(className = "android.widget.ImageButton")
     MobileElement hamburgerIcon;
@@ -19,15 +19,14 @@ public class MenuScreen extends BaseScreen {
     List<MobileElement> menuItems;
 
     public MenuScreen(AndroidDriver driver) {
-        super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public void navigateTo(Menu item){
-        click(hamburgerIcon);
+        hamburgerIcon.click();
         for (MobileElement m : menuItems) {
             if (m.getText().equalsIgnoreCase(item.toString())) {
-                click(m);
+                m.click();
                 return ; } }
     }
 }

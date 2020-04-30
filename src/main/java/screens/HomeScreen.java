@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.html5.Location;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -99,13 +100,22 @@ public class HomeScreen extends BaseScreen {
         return this;
     }
 
+    public HomeScreen setLandscapeMode() {
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+        return this;
+    }
+
     public HomeScreen unPark() {
-        if(isParked == true){
+        if (isParked == true) {
             click(dismissParkLocationButton);
             return this;
-        }else {
+        } else {
             System.out.println("Car not parked!!!");
         }
         return this;
+    }
+
+    public void assertParkedInLandscapeMode() {
+        Assert.assertTrue(driver.getOrientation().equals(ScreenOrientation.LANDSCAPE));
     }
 }

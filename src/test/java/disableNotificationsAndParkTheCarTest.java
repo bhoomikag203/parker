@@ -9,7 +9,7 @@ public class disableNotificationsAndParkTheCarTest extends BaseTest{
     public void shouldDisableNotificationAndParKCar(){
         new HomeScreen(driver).init();
         new NotificationsScreen(driver)
-                .navigateToNotification()
+                .navigateToNotifications()
                 .disableNotifications()
                 .park()
                 .assertParked();

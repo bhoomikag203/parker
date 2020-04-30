@@ -18,7 +18,7 @@ public class NotificationsScreen extends BaseScreen {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public NotificationsScreen navigateToNotification(){
+    public NotificationsScreen navigateToNotifications(){
         new MenuScreen(driver).navigateTo(Menu.NOTIFICATIONS);
         return this;
     }

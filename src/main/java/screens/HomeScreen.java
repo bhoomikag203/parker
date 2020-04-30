@@ -1,5 +1,6 @@
 package screens;
 
+import entities.Vehicle;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -48,7 +49,9 @@ public class HomeScreen extends BaseScreen {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public HomeScreen init(){
+    private boolean isParked;
+
+    public HomeScreen init() {
         driver.findElementByAndroidUIAutomator("text(\"ENABLE LOCATION\")").click();
         driver.findElementByAndroidUIAutomator("text(\"ALLOW ONLY WHILE USING THE APP\")").click();
         click(nextButton);
@@ -57,21 +60,27 @@ public class HomeScreen extends BaseScreen {
         return this;
     }
 
-    public HomeScreen setLocation(Location location){
-        System.out.println("before "+ driver.location());
-        driver.setLocation(location);
-        System.out.println("after "+ driver.location());
+    public HomeScreen setLocation(Location location) {
+        try {
+            System.out.println("before " + driver.location());
+            driver.setLocation(location);
+            Thread.sleep(10000);
+            System.out.println("after " + driver.location());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 
     public HomeScreen park() {
         click(parkVehicleButton);
         click(setParkingLocationButton);
-        System.out.println("Park"+ driver.location());
+        System.out.println("Park" + driver.location());
+        isParked = true;
         return this;
     }
 
-    public void assertParked(){
+    public void assertParked() {
         String message = parkedAtMessage.getText();
         Assert.assertTrue(message.contains("Parked at"));
     }
@@ -91,7 +100,12 @@ public class HomeScreen extends BaseScreen {
     }
 
     public HomeScreen unPark() {
-        click(dismissParkLocationButton);
+        if(isParked == true){
+            click(dismissParkLocationButton);
+            return this;
+        }else {
+            System.out.println("Car not parked!!!");
+        }
         return this;
     }
 }

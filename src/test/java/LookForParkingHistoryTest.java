@@ -1,19 +1,32 @@
 import org.openqa.selenium.html5.Location;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import screens.HomeScreen;
 import screens.ParkingHistoryScreen;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class LookForParkingHistoryTest extends BaseTest {
     @Test
-    public void shouldLookForParkingHistory() {
-        new HomeScreen(driver).init();
-               /* .park()
-                .unPark()
-                .setLocation(new Location(13.16, 67.46, 0.0))
+    public void shouldLookForParkingHistory() throws ParseException {
+        HomeScreen homeScreen = new HomeScreen(driver);
+
+        String actualParkingTime = homeScreen
+                .init()
                 .park()
-                .unPark();*/
-        new ParkingHistoryScreen(driver)
-        .navigateToParkingHistory();
+                .getParkingTime();
+        homeScreen.unPark();
+
+        String parkingTime = new ParkingHistoryScreen(driver)
+                .navigateToParkingHistory()
+                .getParkingTime();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+        Date actualTime = simpleDateFormat.parse(actualParkingTime);
+        Date expectedTime = simpleDateFormat.parse(parkingTime);
+        Assert.assertEquals(actualTime, expectedTime);
     }
 
 }

@@ -90,6 +90,12 @@ public class HomeScreen extends BaseScreen {
         Assert.assertTrue(message.contains("Parked at"));
     }
 
+    public String getParkingTime(){
+        System.out.println(parkedAtMessage.getText().split("\\s")[2]);
+        return parkedAtMessage.getText().split("\\s")[2];
+
+    }
+
     public HomeScreen driveToLocation(String location) {
         try {
             click(searchParkerTextBox);

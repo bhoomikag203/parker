@@ -114,6 +114,11 @@ public class HomeScreen extends BaseScreen {
         return this;
     }
 
+    public HomeScreen killApp(){
+        driver.resetApp();
+        return this;
+    }
+
     public HomeScreen unPark() {
         waitForElementToBeVisible(dismissParkLocationButton);
         if (isParked == true) {

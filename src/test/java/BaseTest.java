@@ -1,8 +1,11 @@
 import driver.DriverInitialize;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.internal.TestResult;
+import utility.ScreenshotHelper;
 
 public class BaseTest {
 
@@ -20,7 +23,10 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void teardown() {
+    public void teardown(ITestResult result) {
+        if (TestResult.FAILURE == result.getStatus()) {
+            new ScreenshotHelper().getScreenshot(driver);
+        }
         driver.quit();
     }
 }

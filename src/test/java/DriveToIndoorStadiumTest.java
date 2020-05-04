@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import screens.HomeScreen;
 
 public class DriveToIndoorStadiumTest extends BaseTest {
+
     @Test
     public void shouldDriveToIndoorStadium() {
         //setting Indoor Stadium location

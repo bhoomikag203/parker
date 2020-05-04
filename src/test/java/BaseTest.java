@@ -27,8 +27,8 @@ public class BaseTest {
         Assert.assertEquals(new BaseScreen(driver).sayHello(), "Helloooo");
     }
 
-//    @AfterMethod
-//    public void teardown() {
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void teardown() {
+        driver.quit();
+    }
 }

@@ -5,6 +5,7 @@ import screens.MenuScreen;
 import screens.NotificationsScreen;
 
 public class disableNotificationsAndParkTheCarTest extends BaseTest{
+
     @Test
     public void shouldDisableNotificationAndParKCar(){
         new HomeScreen(driver).init();

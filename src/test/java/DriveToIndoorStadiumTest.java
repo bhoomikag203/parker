@@ -6,7 +6,9 @@ import screens.HomeScreen;
 public class DriveToIndoorStadiumTest extends BaseTest {
     @Test
     public void shouldDriveToIndoorStadium() {
+        //setting Indoor Stadium location
         Location location = new Location(12.9688, 77.5913, 0.0);
+
         new HomeScreen(driver)
                 .init()
                 .setLocation(location)

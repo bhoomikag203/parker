@@ -39,14 +39,14 @@ public class HomeScreen extends BaseScreen {
     @AndroidFindBy(id = "com.streetline.parker:id/maps_launch_route_text")
     MobileElement startRouteButton;
 
-    @AndroidFindBy(id = "com.streetline.parker:id/maps_router_time")
-    MobileElement estimatedTimeText;
-
     @AndroidFindBy(id = "com.streetline.parker:id/maps_onboarding_pager_next")
     MobileElement nextButton;
 
-    @AndroidFindBy(id = "com.streetline.parker:id/maps_parked_cc_layout")
-    MobileElement paymentButton;
+    @AndroidFindBy(id = "com.streetline.parker:id/maps_toolbar_filter")
+    MobileElement filterButton;
+
+    @AndroidFindBy(className = "android.widget.TextView")
+    List<MobileElement> maximumPriceList;
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
@@ -89,7 +89,7 @@ public class HomeScreen extends BaseScreen {
         Assert.assertTrue(message.contains("Parked at"));
     }
 
-    public String getParkingTime(){
+    public String getParkingTime() {
         return parkedAtMessage.getText().split("\\s")[2];
 
     }
@@ -113,12 +113,12 @@ public class HomeScreen extends BaseScreen {
         return this;
     }
 
-    public HomeScreen sendAppToBackground(){
+    public HomeScreen sendAppToBackground() {
         driver.runAppInBackground(Duration.ofSeconds(10));
         return this;
     }
 
-    public HomeScreen killApp(){
+    public HomeScreen killApp() {
         driver.resetApp();
         return this;
     }
@@ -134,11 +134,30 @@ public class HomeScreen extends BaseScreen {
         return this;
     }
 
-    public boolean isParked(){
+    public boolean isParked() {
         return isParked;
     }
 
-    public void assertUnParked(){
+    public HomeScreen filterForParkingSpot(MaximumPrice price, String duration, ParkingType type) {
+
+        click(filterButton);
+
+        for (MobileElement w :
+                maximumPriceList) {
+            if (w.getText().equalsIgnoreCase(String.valueOf(price).replace("_", ".")))
+                click(w);
+            if (w.getText().equalsIgnoreCase(String.valueOf(duration)))
+                click(w);
+            if (w.getText().equalsIgnoreCase(String.valueOf(type).replace("_", " ")))
+                click(w);
+        }
+
+        driver.navigate().back();
+
+        return this;
+    }
+
+    public void assertUnParked() {
         Assert.assertTrue(parkVehicleButton.isDisplayed());
     }
 

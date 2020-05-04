@@ -16,8 +16,17 @@ dependencies {
     compile group: 'org.testng', name: 'testng', version: '7.1.0'
     compile group: 'io.appium', name: 'java-client', version: '7.3.0'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    compile(group: 'org.uncommons', name: 'reportng', version: '1.1.4') {
+        exclude group: 'org.testng', module: 'testng'
+    }
+    compile group: 'org.uncommons', name: 'reportng', version: '1.1.4'
+    compile group: 'com.google.inject', name: 'guice', version: '3.0'
 }
 
 task runTests(type: Test) {
-    useTestNG()
+    useTestNG() {
+        listeners << 'org.uncommons.reportng.HTMLReporter'
+        listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+        outputDirectory = file("$buildDir/reportng-reports")
+    }
 }

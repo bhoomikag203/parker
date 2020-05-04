@@ -27,7 +27,8 @@ public class ParkingHistoryScreen extends BaseScreen {
     }
 
     public String getParkingTime(){
-         return parkingTimeText.getText().substring(0,4);
+        System.out.println("expected: "+ parkingTimeText.getText().substring(0,5));
+         return parkingTimeText.getText().substring(0,5);
     }
 
 

@@ -90,6 +90,7 @@ public class HomeScreen extends BaseScreen {
     }
 
     public String getParkingTime() {
+        System.out.println("actual :"+ parkedAtMessage.getText().split("\\s")[2]);
         return parkedAtMessage.getText().split("\\s")[2];
 
     }

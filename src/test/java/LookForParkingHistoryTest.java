@@ -18,14 +18,11 @@ public class LookForParkingHistoryTest extends BaseTest {
                 .getParkingTime();
         homeScreen.unPark();
 
-        String parkingTime = new ParkingHistoryScreen(driver)
+        String expectedParkingTime = new ParkingHistoryScreen(driver)
                 .navigateToParkingHistory()
                 .getParkingTime();
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
-        Date actualTime = simpleDateFormat.parse(actualParkingTime);
-        Date expectedTime = simpleDateFormat.parse(parkingTime);
-        Assert.assertEquals(actualTime, expectedTime);
+        Assert.assertEquals(actualParkingTime, expectedParkingTime);
     }
 
 }

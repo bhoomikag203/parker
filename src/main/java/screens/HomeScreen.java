@@ -1,6 +1,5 @@
 package screens;
 
-import entities.Vehicle;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -91,7 +90,6 @@ public class HomeScreen extends BaseScreen {
     }
 
     public String getParkingTime(){
-        System.out.println(parkedAtMessage.getText().split("\\s")[2]);
         return parkedAtMessage.getText().split("\\s")[2];
 
     }
@@ -136,6 +134,10 @@ public class HomeScreen extends BaseScreen {
         return this;
     }
 
+    public boolean isParked(){
+        return isParked;
+    }
+
     public void assertUnParked(){
         Assert.assertTrue(parkVehicleButton.isDisplayed());
     }
@@ -143,4 +145,5 @@ public class HomeScreen extends BaseScreen {
     public void assertParkedInLandscapeMode() {
         Assert.assertTrue(driver.getOrientation().equals(ScreenOrientation.LANDSCAPE));
     }
+
 }

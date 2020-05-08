@@ -1,0 +1,31 @@
+{
+  "executionDetails": {
+    "appium_js_path": "/usr/local/bin/appium",
+    "appium_node_path": "/usr/local/bin/node",
+    "monitoring":true
+  },
+  "testFeed":[
+    {
+      "belongsTo":"optimus",
+      "runsOn": "any",
+      "appDir": "app",
+      "nativeApp":true,
+      "optimusDesiredCapabilities": {
+        "appiumServerCapabilities": {
+          "app": "Parker Find available parking_v5.1.2.2_apkpure.com.apk",
+          "platformName": "Android",
+          "automationName": "UIAutomator1"
+        },
+        "androidOnlyCapabilities": {
+          "appActivity": "com.streetline.parker.ui.main.MainActivity",
+          "appPackage": "com.streetline.parker",
+          "avdLaunchTimeout": 300000,
+          "useKeystore": false
+        }
+      },
+      "deviceState": {
+        "captureVideo": true
+      }
+    }
+  ]
+}

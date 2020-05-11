@@ -13,7 +13,6 @@ public class ParkingHistoryScreen extends BaseScreen {
 
     public ParkingHistoryScreen(AndroidDriver driver) {
         super(driver);
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public ParkingHistoryScreen navigateToParkingHistory(){

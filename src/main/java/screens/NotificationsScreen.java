@@ -15,7 +15,6 @@ public class NotificationsScreen extends BaseScreen {
 
     public NotificationsScreen(AndroidDriver driver) {
         super(driver);
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public NotificationsScreen navigateToNotifications(){

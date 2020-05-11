@@ -50,7 +50,6 @@ public class HomeScreen extends BaseScreen {
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     private boolean isParked;

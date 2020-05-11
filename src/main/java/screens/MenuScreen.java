@@ -20,7 +20,6 @@ public class MenuScreen extends BaseScreen {
 
     public MenuScreen(AndroidDriver driver) {
         super(driver);
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public void navigateTo(Menu item){

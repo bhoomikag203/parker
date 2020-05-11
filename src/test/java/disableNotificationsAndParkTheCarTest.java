@@ -1,7 +1,5 @@
 import org.testng.annotations.Test;
 import screens.HomeScreen;
-import screens.Menu;
-import screens.MenuScreen;
 import screens.NotificationsScreen;
 
 public class disableNotificationsAndParkTheCarTest extends BaseTest{

@@ -1,9 +1,9 @@
 import org.openqa.selenium.html5.Location;
 import org.testng.annotations.Test;
 import screens.HomeScreen;
-import screens.MaximumPrice;
-import screens.ParkingDuration;
-import screens.ParkingType;
+import appItemConstants.MaximumPrice;
+import appItemConstants.ParkingDuration;
+import appItemConstants.ParkingType;
 
 public class FilterParkingSpotTest extends BaseTest {
 

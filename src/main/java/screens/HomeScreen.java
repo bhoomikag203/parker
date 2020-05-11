@@ -1,12 +1,12 @@
 package screens;
 
+import appItemConstants.MaximumPrice;
+import appItemConstants.ParkingType;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.html5.Location;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.time.Duration;

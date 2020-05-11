@@ -1,4 +1,4 @@
-package screens;
+package appItemConstants;
 
 public enum ParkingDuration {
     Any("any"), One_Hour_Plus("1 hr +"), Two_Hour_Plus("2 hr +"), Three_Hour_Plus("3 hr +"), Four_Hour_Plus("4 hr +");

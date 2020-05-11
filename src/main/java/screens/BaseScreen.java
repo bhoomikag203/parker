@@ -1,6 +1,8 @@
 package screens;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -12,12 +14,12 @@ import java.util.List;
 public class BaseScreen {
 
     protected AndroidDriver driver;
-    private WebDriverWait webDriverWait;
+    protected WebDriverWait webDriverWait;
 
     public BaseScreen(AndroidDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        webDriverWait = new WebDriverWait(driver, 30);
+        webDriverWait = new WebDriverWait(driver, 60);
     }
 
     protected void waitForElementToBeVisible(WebElement element) {

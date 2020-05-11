@@ -1,13 +1,11 @@
 import org.testng.annotations.Test;
-import screens.HomeScreen;
 
 public class ParkAndSendAppToBackgroundTest extends BaseTest {
 
     @Test
-    public void shouldParkCarAndSendAppToBackground(){
-        new HomeScreen(driver)
-                .init()
-                .park()
+    public void shouldParkCarAndSendAppToBackground() {
+
+        homeScreen.park()
                 .sendAppToBackground()
                 .unPark()
                 .assertUnParked();

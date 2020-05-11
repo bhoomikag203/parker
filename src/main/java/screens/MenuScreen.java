@@ -8,7 +8,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import java.util.List;
 
 public class MenuScreen extends BaseScreen {
-
     @AndroidFindBy(className = "android.widget.ImageButton")
     MobileElement hamburgerIcon;
 
@@ -20,7 +19,7 @@ public class MenuScreen extends BaseScreen {
     }
 
     public void navigateTo(Menu item){
-        hamburgerIcon.click();
+        click(hamburgerIcon);
         for (MobileElement m : menuItems) {
             if (m.getText().equalsIgnoreCase(item.toString().replaceAll("_"," "))) {
                 m.click();

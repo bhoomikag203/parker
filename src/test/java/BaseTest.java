@@ -5,12 +5,15 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.internal.TestResult;
+import screens.BaseScreen;
+import screens.HomeScreen;
 import utility.ScreenshotHelper;
 
 public class BaseTest {
 
     private DriverInitialize driverInitialize;
     protected AndroidDriver<AndroidElement> driver;
+    protected HomeScreen homeScreen;
 
     public BaseTest() {
         driverInitialize = new DriverInitialize();
@@ -19,7 +22,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         driver = driverInitialize.initialize();
-
+        homeScreen = new HomeScreen(driver).init();
     }
 
     @AfterMethod

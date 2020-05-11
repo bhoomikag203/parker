@@ -14,8 +14,8 @@ public class ParkingHistoryScreen extends BaseScreen {
         super(driver);
     }
 
-    public ParkingHistoryScreen navigateToParkingHistory(){
-        try{
+    public ParkingHistoryScreen navigateToParkingHistory() {
+        try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -24,9 +24,9 @@ public class ParkingHistoryScreen extends BaseScreen {
         return this;
     }
 
-    public String getParkingTime(){
-        System.out.println("expected: "+ parkingTimeText.getText().substring(0,5));
-         return parkingTimeText.getText().substring(0,5);
+    public String getParkingTime() {
+        System.out.println("expected: " + parkingTimeText.getText().substring(0, 5));
+        return parkingTimeText.getText().substring(0, 5);
     }
 
 

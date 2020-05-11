@@ -1,6 +1,5 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import screens.HomeScreen;
 import screens.ParkingHistoryScreen;
 
 import java.text.ParseException;
@@ -9,13 +8,12 @@ import java.util.Date;
 
 public class LookForParkingHistoryTest extends BaseTest {
     @Test
-    public void shouldLookForParkingHistory() throws ParseException {
-        HomeScreen homeScreen = new HomeScreen(driver);
+    public void shouldLookForParkingHistory() {
 
         String actualParkingTime = homeScreen
-                .init()
                 .park()
                 .getParkingTime();
+
         homeScreen.unPark();
 
         String expectedParkingTime = new ParkingHistoryScreen(driver)

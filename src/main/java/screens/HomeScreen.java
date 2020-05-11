@@ -52,8 +52,6 @@ public class HomeScreen extends BaseScreen {
         super(driver);
     }
 
-    private boolean isParked;
-
     public HomeScreen init() {
         driver.findElementByAndroidUIAutomator("text(\"ENABLE LOCATION\")").click();
         driver.findElementByAndroidUIAutomator("text(\"ALLOW ONLY WHILE USING THE APP\")").click();
@@ -62,6 +60,8 @@ public class HomeScreen extends BaseScreen {
         click(nextButton);
         return this;
     }
+
+    private boolean isParked;
 
     public HomeScreen setLocation(Location location) {
         try {

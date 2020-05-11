@@ -16,10 +16,22 @@ public class BaseScreen {
     protected AndroidDriver driver;
     protected WebDriverWait webDriverWait;
 
+    @AndroidFindBy(id = "com.streetline.parker:id/maps_onboarding_pager_next")
+    MobileElement nextButton;
+
     public BaseScreen(AndroidDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         webDriverWait = new WebDriverWait(driver, 60);
+    }
+
+    public HomeScreen init() {
+        driver.findElementByAndroidUIAutomator("text(\"ENABLE LOCATION\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"ALLOW ONLY WHILE USING THE APP\")").click();
+        click(nextButton);
+        click(nextButton);
+        click(nextButton);
+        return new HomeScreen(driver);
     }
 
     protected void waitForElementToBeVisible(WebElement element) {

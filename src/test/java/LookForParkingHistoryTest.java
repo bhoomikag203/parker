@@ -1,10 +1,5 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import screens.ParkingHistoryScreen;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class LookForParkingHistoryTest extends BaseTest {
     @Test
@@ -14,9 +9,8 @@ public class LookForParkingHistoryTest extends BaseTest {
                 .park()
                 .getParkingTime();
 
-        homeScreen.unPark();
-
-        String expectedParkingTime = new ParkingHistoryScreen(driver)
+        driver.navigate().back();
+        String expectedParkingTime = parkingHistoryScreen
                 .navigateToParkingHistory()
                 .getParkingTime();
 

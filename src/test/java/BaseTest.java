@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.internal.TestResult;
 import screens.BaseScreen;
 import screens.HomeScreen;
+import screens.ParkingHistoryScreen;
 import utility.ScreenshotHelper;
 
 public class BaseTest {
@@ -14,6 +15,7 @@ public class BaseTest {
     private DriverInitialize driverInitialize;
     protected AndroidDriver<AndroidElement> driver;
     protected HomeScreen homeScreen;
+    protected ParkingHistoryScreen parkingHistoryScreen;
 
     public BaseTest() {
         driverInitialize = new DriverInitialize();
@@ -22,7 +24,8 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         driver = driverInitialize.initialize();
-        homeScreen = new HomeScreen(driver).init();
+        homeScreen = new BaseScreen(driver).init();
+        parkingHistoryScreen = new ParkingHistoryScreen(driver);
     }
 
     @AfterMethod

@@ -39,8 +39,6 @@ public class HomeScreen extends BaseScreen {
     @AndroidFindBy(id = "com.streetline.parker:id/maps_launch_route_text")
     MobileElement startRouteButton;
 
-    @AndroidFindBy(id = "com.streetline.parker:id/maps_onboarding_pager_next")
-    MobileElement nextButton;
 
     @AndroidFindBy(id = "com.streetline.parker:id/maps_toolbar_filter")
     MobileElement filterButton;
@@ -50,15 +48,6 @@ public class HomeScreen extends BaseScreen {
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
-    }
-
-    public HomeScreen init() {
-        driver.findElementByAndroidUIAutomator("text(\"ENABLE LOCATION\")").click();
-        driver.findElementByAndroidUIAutomator("text(\"ALLOW ONLY WHILE USING THE APP\")").click();
-        click(nextButton);
-        click(nextButton);
-        click(nextButton);
-        return this;
     }
 
     private boolean isParked;

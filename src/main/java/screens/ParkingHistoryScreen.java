@@ -4,9 +4,6 @@ import appItemConstants.Menu;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.concurrent.TimeUnit;
 
 public class ParkingHistoryScreen extends BaseScreen {
 
@@ -31,6 +28,5 @@ public class ParkingHistoryScreen extends BaseScreen {
         System.out.println("expected: " + parkingTimeText.getText().substring(0, 5));
         return parkingTimeText.getText().substring(0, 5);
     }
-
 
 }

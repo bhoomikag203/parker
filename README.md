@@ -22,8 +22,22 @@ Capture screenshots on failure<br/>
 
 ## Steps to clone and execute the tests
 ```$xslt
-git clone https://github.com/bhoomikag203/parker
-cd parker
-gradle build
-gradle runTests 
+// Clone the repository
+$ git clone https://github.com/bhoomikag203/parker
+$ cd parker
+```
+```$xslt
+// Start the appium server either in desktop app or from terminal
+$ appium
+```
+Connect your mobile device and enable USB debugging
+```$xslt
+// Check for devices connected to your system
+$ adb devices
+// Change the "deviceName" in config.properties to the connected device name
+```
+```$xslt
+// Execute below commands in your project directory
+$ gradle build
+$ gradle runTests 
 ```

@@ -1,4 +1,6 @@
-package entities;
+package builders;
+
+import entities.Vehicle;
 
 public class VehicleBuilder {
     private Vehicle vehicle;

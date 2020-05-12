@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="All Tests" verbose="1" parallel="tests" thread-count="2">
+    <test name="Disable notification">
+        <parameter name="platform" value="Android 10"/>
+        <parameter name="udid" value="feb41c1f"/>
+        <parameter name="systemPort" value="8200"/>
+        <classes>
+            <class name="disableNotificationsAndParkTheCarTest" />
+        </classes>
+    </test>
+    <test name="Drive to Indoor Stadium">
+        <parameter name="platform" value="Android 7.0"/>
+        <parameter name="udid" value="ZH59EEVS99999999"/>
+        <parameter name="systemPort" value="8201"/>
+        <classes>
+            <class name="DriveToIndoorStadiumTest" />
+        </classes>
+    </test>
+</suite>

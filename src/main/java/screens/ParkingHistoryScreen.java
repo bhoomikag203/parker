@@ -4,6 +4,7 @@ import appItemConstants.Menu;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ParkingHistoryScreen extends BaseScreen {
 
@@ -15,11 +16,12 @@ public class ParkingHistoryScreen extends BaseScreen {
     }
 
     public ParkingHistoryScreen navigateToParkingHistory() {
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.navigate().back();
         new MenuScreen(driver).navigateTo(Menu.PARKING_HISTORY);
         return this;
     }

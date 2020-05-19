@@ -1,6 +1,9 @@
+package carParking;
+
+import baseTest.BaseTest;
 import org.testng.annotations.Test;
 
-public class parkCarAtCurrentLocationTest extends BaseTest {
+public class ParkCarAtCurrentLocationTest extends BaseTest {
 
     @Test
     public void shouldParkCarAtCurrentLocation() {

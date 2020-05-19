@@ -62,7 +62,4 @@ public class BaseScreen {
         webDriverWait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
-    public String sayHello() {
-        return "Helloooo";
-    }
 }

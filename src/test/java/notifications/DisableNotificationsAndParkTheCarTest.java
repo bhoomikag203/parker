@@ -1,7 +1,10 @@
+package notifications;
+
+import baseTest.BaseTest;
 import org.testng.annotations.Test;
 import screens.NotificationsScreen;
 
-public class disableNotificationsAndParkTheCarTest extends BaseTest{
+public class DisableNotificationsAndParkTheCarTest extends BaseTest {
 
     @Test
     public void shouldDisableNotificationAndParKCar(){

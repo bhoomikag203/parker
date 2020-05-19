@@ -1,3 +1,6 @@
+package carParking;
+
+import baseTest.BaseTest;
 import org.testng.annotations.Test;
 
 public class ParkAndSendAppToBackgroundTest extends BaseTest {

@@ -44,7 +44,7 @@ public class HomeScreen extends BaseScreen {
     MobileElement filterButton;
 
     @AndroidFindBy(className = "android.widget.TextView")
-    List<MobileElement> maximumPriceList;
+    List<MobileElement> filterParkingSpot;
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
@@ -132,7 +132,7 @@ public class HomeScreen extends BaseScreen {
         click(filterButton);
 
         for (MobileElement w :
-                maximumPriceList) {
+                filterParkingSpot) {
             if (w.getText().equalsIgnoreCase(String.valueOf(price).replace("_", ".")))
                 click(w);
             if (w.getText().equalsIgnoreCase(String.valueOf(duration)))

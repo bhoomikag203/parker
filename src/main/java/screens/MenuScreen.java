@@ -20,6 +20,7 @@ public class MenuScreen extends BaseScreen {
 
     public void navigateTo(Menu item){
         waitForElementToBeClickable(hamburgerIcon);
+
         click(hamburgerIcon);
         for (MobileElement m : menuItems) {
             if (m.getText().equalsIgnoreCase(item.toString().replaceAll("_"," "))) {

@@ -1,3 +1,6 @@
+package filterParkingSpot;
+
+import baseTest.BaseTest;
 import org.openqa.selenium.html5.Location;
 import org.testng.annotations.Test;
 import appItemConstants.MaximumPrice;
